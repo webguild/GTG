@@ -18,8 +18,27 @@
 
 #mapGeographic{
 	width: 1300px;
+    height: 600px;
 	margin: 0 auto;
-	position: relative;
+    position: relative;
+}
+#map-part-left{
+    width: 695px;
+    height: 565px;
+    background: url("../uploads/map_geographi_left.png") no-repeat;
+    position: absolute;
+    left: 37px;
+    top: 20px;
+    z-index: 5;
+}
+#map-part-right{
+    position: absolute;
+    right: 37px;
+    top: 0;
+    width: 743px;
+    height: 565px;
+    background: url("../uploads/map_geographi_right.png") no-repeat;
+    z-index: 2;
 }
 
 /* map control */
