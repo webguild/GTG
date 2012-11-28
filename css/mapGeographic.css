@@ -19,10 +19,64 @@
 #mapGeographic{
 	width: 1300px;
 	margin: 0 auto;
+	position: relative;
 }
 
+/* map control */
+#map-control{
+	position: absolute;	
+	height: 51px;
+	padding: 0 5px 0 16px;
+	line-height: 51px;
+	background: url(../uploads/sprite.png) no-repeat 0 0;
+}
+#map-control > span{
+	position: absolute;
+	left: 100%;
+	top: 0;
+	display: block;
+	width: 13px;
+	height: 51px;		 
+	background: url(../uploads/sprite.png) no-repeat -912px 0;
+}
+#map-control a{
+	color: #02d2ff;
+	font-size: 15px;
+	line-height: 30px;
+	font-weight: bold;
+	height: 30px;
+	margin-top: -2px;
+	padding: 0 7px 0 15px;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+}
+#map-control a:first-child{
+	margin-right: 10px;
+}
 
+#map-control .active{
+	color: #000;
+	text-decoration: none;
+	background: url(../uploads/sprite.png) no-repeat 0px -56px;
+}
+#map-control .active span{
+	display: block;
+	width: 8px;
+	height: 30px;
+	left: 100%;
+	top: 0;
+	position: absolute;
+	background: url(../uploads/sprite.png) no-repeat -441px -56px;
+}
+#map-control .active span + span{	
+	top: -20px;
+	left: 50%; 
+	width: 24px;
+	height: 20px;
+	margin-left: -12px;
+	background: url(../uploads/sprite.png) no-repeat -977px 0px;
+}
 
-
-/* mapGeographic
+/* End mapGeographic
 --------------------------------------------------------------------------------------------------------*/
