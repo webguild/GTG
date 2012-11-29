@@ -113,7 +113,7 @@
     font-size: 35px;
     padding-left: 10px;
     margin: 0 0 0 134px;
-    background: url("../uploads/h2_blue_line.png") no-repeat;
+    background: url("../uploads/h2_blue_line.png") no-repeat 0 2px;
 }
 
 #gas-count {
@@ -171,7 +171,7 @@
 	position: absolute;
 	padding: 5px 7px 5px 10px;
 	background: #fff;
-    white-space: nowrap;
+	white-space: nowrap;
 	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
 }
 #mapGeographic #petersburg{
