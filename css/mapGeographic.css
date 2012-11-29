@@ -109,6 +109,51 @@
     background: url("../uploads/gas_pipe_img.png") no-repeat;
     z-index: 3;
 }
+#mapGeographic h2{
+    font-size: 30px;
+    padding-left: 10px;
+    margin: 0;
+    background: url("../uploads/h2_blue_line.png") no-repeat;
+}
+
+#gas-count {
+    position: absolute;
+    text-align: center;
+    width: 1015px;
+    height: 316px;
+    top: -90px;
+    left: 207px;
+    padding-top: 125px;
+    z-index: 4;
+    font-size: 103px;
+}
+#gas-count strong{
+    position: relative;
+    z-index: 1;
+}
+#gas-count p{
+    font-size: 18px;
+    position: relative;
+    top: -33px;
+    left: 116px;
+}
+#gas-count .cloudsDown{
+    position: absolute;
+    top: -25px;
+    left: -30px;
+    width: 1015px;
+    height: 441px;
+    background: url("../uploads/clouds_185_down.png") no-repeat;
+    z-index: -1;
+}
+#gas-count .cloudsUp{
+    position: absolute;
+    width: 1015px;
+    height: 441px;
+    top: 0;
+    left: 0;
+    background: url("../uploads/clouds_185_up.png") no-repeat;
+}
 
 /* city list */
 #mapGeographic ul{
