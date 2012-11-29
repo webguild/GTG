@@ -270,7 +270,15 @@
 	background-position: -16px -400px;
 }
 
-
+#gas-field {
+    position: absolute;
+    width: 175px;
+    height: 128px;
+    left: -90px;
+    top: 137px;
+    background: url("../uploads/minerals_img.png") no-repeat;
+    display: none;
+}
 
 /* End mapGeographic
 --------------------------------------------------------------------------------------------------------*/
