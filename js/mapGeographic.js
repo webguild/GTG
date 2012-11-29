@@ -1,59 +1,73 @@
 $(document).ready(function(){
-    Cufon.replace('.textGrad', {
+    var fadeSpeedFast = 200, fadeSpeedSlow =700, animateSpeed = 1000, block = 1;
+    if($.browser.msie && $.browser.version !== 9){
+        fadeSpeedFast = 0;
+        fadeSpeedSlow =0;
+        animateSpeed = 0;
+    }
+    var map = $('#mapGeographic'),
+        mapControl = $('#map-control', map),
+        mapUl = $('ul', map),
+        mapGasPipe = $('#gas-pipe', map),
+        mapGasCount = $('#gas-count', map),
+        mapPartLeft = $('#map-part-left', map),
+        mapPartRight = $('#map-part-right', map),
+        mapGasField = $('#gas-field', map),
+        mapTextGrad = $('.textGrad', map),
+        mapH2 = $('h2', map);
+
+    if(block){
+        map.fadeIn(fadeSpeedSlow,function(){
+            mapControl.fadeIn(fadeSpeedFast, function(){
+                mapUl.fadeIn(fadeSpeedSlow, function(){
+                    mapGasPipe.fadeIn(fadeSpeedSlow, function(){
+                        mapGasCount.fadeIn(fadeSpeedSlow);
+                        block = 0
+                    });
+                });
+            });
+        });
+    }
+
+    Cufon.replace( mapTextGrad, {
         color: '-linear-gradient(#c2c2c2, #383838, #000000)'
     });
 
-    var fadeSpeedFast = 200;
-    var fadeSpeedSlow =700;
-    var animateSpeed = 1000;
-
     $('#map-control').on('click', 'a', function (){
-    	$(this).addClass('active').siblings('a').removeClass('active');
-        showMapSlide();
+        if(block){
+            return;
+        }else{
+            showMapSlide(this);
+            $(this).addClass('active').siblings('a').removeClass('active');
+        }
         return false;
     });
 
-    var map = $('#mapGeographic');
+    function showMapSlide( targetObj ){
+        block = 1;
 
-    map.fadeIn(fadeSpeedSlow,function(){
-        map.find('#map-control').fadeIn(fadeSpeedFast, function(){
-            map.find('ul').fadeIn(fadeSpeedSlow, function(){
-                map.find('#gas-pipe').fadeIn(fadeSpeedSlow, function(){
-                    map.find('#gas-count').fadeIn(fadeSpeedSlow);
+        if($( targetObj ).hasClass( 'mapCollapse' ) && !$( targetObj ).hasClass( 'active' ) ){
+           mapUl.add( mapGasCount ).add( mapH2 ).add( mapGasPipe ).fadeOut(fadeSpeedSlow, function(){
+                mapPartLeft.add( mapPartRight ).css( 'visibility', 'visible' );
+                map.css('background', 'none');
+                var mapLeftPosition = parseInt( mapPartLeft.css('left') );
+                var mapRightPosition = parseInt( mapPartRight.css('left') );
+
+                mapPartLeft.animate({left: mapLeftPosition-24}, animateSpeed);
+                mapPartRight.animate({left: mapRightPosition+47}, animateSpeed, function(){
+                    mapTextGrad.html('104 720 000 000').siblings('p').html('запасов кубометров газа');
+                    Cufon.replace( mapTextGrad, {
+                        color: '-linear-gradient(#c2c2c2, #383838, #000000)'
+                    });
+                    mapH2.html('Люди Ямала – мощная сила!').fadeIn(fadeSpeedSlow);
+                    mapGasField.fadeIn(fadeSpeedSlow);
+                    mapGasCount.fadeIn(fadeSpeedSlow);
+                    block = 0;
                 });
             });
-        });
-    });
+        }else{
 
-    function showMapSlide(){
-        map.find('#gas-count, #gas-pipe, ul, h2').fadeOut(fadeSpeedSlow, function(){
-            map.find('#map-part-left, #map-part-right').css('visibility', 'visible');
-            map.css('background', 'none');
-            var mapLeftPosition = parseInt(map.find('#map-part-left').css('left'));
-            var mapRightPosition = parseInt(map.find('#map-part-right').css('left'));
-
-            map.find('#map-part-left').animate({left: mapLeftPosition-24}, animateSpeed);
-            map.find('#map-part-right').animate({left: mapRightPosition+47}, animateSpeed, function(){
-                map.find('#gas-count .textGrad').html('104 720 000 000').siblings('p').html('запасов кубометров газа');
-                Cufon.replace('.textGrad', {
-                    color: '-linear-gradient(#c2c2c2, #383838, #000000)'
-                });
-                map.find('h2').html('Люди Ямала – мощная сила!').fadeIn(fadeSpeedSlow);
-                $('#gas-field',this).fadeIn(fadeSpeedSlow);
-                map.find('#gas-count').fadeIn(fadeSpeedSlow);
-
-            });
-        });
-//        map.find('ul').fadeOut(fadeSpeedSlow);
-
-
-
-        //map.find('#map-part-right').animate({left: 10}, animateSpeed);
+        }
     }
-
-   /* setTimeout(function(){
-        map.find('#map-part-left, #map-part-right').css('visibility', 'visible');
-        map.css('background', 'none');
-    },1000);*/
 
 });
