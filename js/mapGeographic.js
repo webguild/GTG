@@ -1,5 +1,5 @@
 $(document).ready(function(){
     Cufon.replace('.textGrad', {
-        color: '-linear-gradient(#767676, #000000)'
+        color: '-linear-gradient(#c2c2c2, #383838, #000000)'
     });
 });
