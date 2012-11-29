@@ -21,6 +21,8 @@
     height: 600px;
 	margin: 0 auto;
     position: relative;
+    background: url("../uploads/map_geographi_full.png") no-repeat 37px 20px;
+    display: none;
 }
 #map-part-left{
     width: 695px;
@@ -30,15 +32,17 @@
     left: 37px;
     top: 39px;
     z-index: 2;
+    visibility: hidden;
 }
 #map-part-right{
     position: absolute;
-    right: 37px;
-    top: 19px;
+    left: 522px;
+    top: 20px;
     width: 743px;
     height: 565px;
     background: url("../uploads/map_geographi_right.png") no-repeat;
     z-index: 1;
+    visibility: hidden;
 }
 
 /* map control */
@@ -51,6 +55,7 @@
 	line-height: 51px;
 	background: url(../uploads/sprite.png) no-repeat 0 0;
     z-index: 4;
+    display: none;
 }
 #map-control > span{
 	position: absolute;
@@ -108,6 +113,7 @@
     left: 48px;
     background: url("../uploads/gas_pipe_img.png") no-repeat;
     z-index: 3;
+    display: none;
 }
 #mapGeographic h2{
     font-size: 35px;
@@ -126,6 +132,7 @@
     padding-top: 125px;
     z-index: 4;
     font-size: 103px;
+    display: none;
 }
 #gas-count strong{
     position: relative;
@@ -166,6 +173,9 @@
 	font-size: 14px;
 	font-weight: bold;
 	list-style-type: none;
+    display: none;
+    height: 1px;
+    width: 1px;
 }
 #mapGeographic ul li{
 	position: absolute;
