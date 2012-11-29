@@ -44,8 +44,10 @@
 /* map control */
 #map-control{
 	position: absolute;	
+	top: 435px;
+	left: 340px;
 	height: 51px;
-	padding: 0 5px 0 16px;
+	padding: 0 11px 0 18px;
 	line-height: 51px;
 	background: url(../uploads/sprite.png) no-repeat 0 0;
     z-index: 4;
@@ -66,7 +68,7 @@
 	font-weight: bold;
 	height: 30px;
 	margin-top: -2px;
-	padding: 0 7px 0 15px;
+	padding: 0 9px 0 17px;
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
@@ -107,6 +109,124 @@
     background: url("../uploads/gas_pipe_img.png") no-repeat;
     z-index: 3;
 }
+
+/* city list */
+#mapGeographic ul{
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	font-weight: bold;
+	list-style-type: none;
+}
+#mapGeographic ul li{
+	position: absolute;
+	padding: 5px 7px 5px 10px;
+	background: #fff;
+	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
+}
+#mapGeographic #petersburg{
+	top: 121px;
+	left: 249px;
+}
+#mapGeographic #smolensk{
+	top: 155px;
+	left: 180px;
+}
+#mapGeographic #moscow{
+	top: 200px;
+	left: 254px;
+	padding: 5px 24px 5px 8px;
+	background: #feff9e url(../uploads/sprite.png) no-repeat 69px -100px;
+}
+#mapGeographic #kazan{
+	top: 256px;
+	left: 322px;
+}
+#mapGeographic #yekaterinburg{
+	top: 294px;
+	left: 366px;
+}
+#mapGeographic #krasnodar{
+	top: 289px;
+	left: 82px;
+}
+#mapGeographic #urengoy{
+	top: 223px;
+	left: 556px;
+	background: #feff9e;
+}
+#mapGeographic #krasnoyarsk{
+	top: 347px;
+	left: 556px;
+}
+#mapGeographic #khabarovsk{
+	top: 411px;
+	left: 1010px;
+}
+
+/* city list arrows*/
+#mapGeographic ul li span{
+	position: absolute;
+	z-index: -1;
+	display: block;
+	width: 30px;
+	height: 30px;
+	background: url(../uploads/city-arrows.png) no-repeat 0 0;
+}
+#mapGeographic #petersburg span{
+	right: 100%;
+	top: 5px;
+	background-position: 13px 0;
+}
+
+#mapGeographic #smolensk span{
+	right: 100%;
+	top: 0px;
+	background-position: 12px -51px;
+}
+#mapGeographic #moscow span{
+	right: 100%;
+	top: 0px;
+	background-position: 15px -100px;
+}
+#mapGeographic #kazan span{
+	right: 100%;
+	top: 5px;
+	background-position: 12px -152px;
+}
+#mapGeographic #yekaterinburg span{
+	right: 100%;
+	top: -3px;
+	background-position: 17px -200px;
+}
+#mapGeographic #krasnodar span{
+	right: 100%;
+	top: 6px;
+	background-position: 14px -250px;
+}
+#mapGeographic #urengoy span{
+	right: 90%;	
+	top: -13px;
+	background-position: 14px -300px;
+}
+#mapGeographic #krasnoyarsk span{
+	right: 14%;	
+	top: 68%;
+	background-position: -3px -360px;
+}
+#mapGeographic #khabarovsk span{
+	left: 100%;	
+	top: 5px;
+	background-position: -16px -400px;
+}
+
+
 
 /* End mapGeographic
 --------------------------------------------------------------------------------------------------------*/
