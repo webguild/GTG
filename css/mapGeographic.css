@@ -28,13 +28,13 @@
     background: url("../uploads/map_geographi_left.png") no-repeat;
     position: absolute;
     left: 37px;
-    top: 20px;
+    top: 39px;
     z-index: 2;
 }
 #map-part-right{
     position: absolute;
     right: 37px;
-    top: 0;
+    top: 19px;
     width: 743px;
     height: 565px;
     background: url("../uploads/map_geographi_right.png") no-repeat;
@@ -44,7 +44,7 @@
 /* map control */
 #map-control{
 	position: absolute;	
-	top: 435px;
+	top: 454px;
 	left: 340px;
 	height: 51px;
 	padding: 0 11px 0 18px;
@@ -104,16 +104,16 @@
     position: absolute;
     width: 1113px;
     height: 445px;
-    top: 81px;
+    top: 100px;
     left: 48px;
     background: url("../uploads/gas_pipe_img.png") no-repeat;
     z-index: 3;
 }
 #mapGeographic h2{
-    font-size: 30px;
+    font-size: 35px;
     padding-left: 10px;
-    margin: 0;
-    background: url("../uploads/h2_blue_line.png") no-repeat;
+    margin: 0 0 0 134px;
+    background: url("../uploads/h2_blue_line.png") no-repeat 0 2px;
 }
 
 #gas-count {
@@ -121,8 +121,8 @@
     text-align: center;
     width: 1015px;
     height: 316px;
-    top: -90px;
-    left: 207px;
+    top: -75px;
+    left: 209px;
     padding-top: 125px;
     z-index: 4;
     font-size: 103px;
@@ -139,7 +139,7 @@
 }
 #gas-count .cloudsDown{
     position: absolute;
-    top: -25px;
+    top: -20px;
     left: -30px;
     width: 1015px;
     height: 441px;
@@ -159,7 +159,7 @@
 #mapGeographic ul{
 	position: absolute;
 	z-index: 5;
-	top: 0;
+	top: 19px;
 	left: 0;
 	padding: 0;
 	margin: 0;
