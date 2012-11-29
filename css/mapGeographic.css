@@ -21,7 +21,10 @@
     height: 600px;
 	margin: 0 auto;
     position: relative;
-    background: url("../uploads/map_geographi_full.png") no-repeat 37px 20px;
+    /*background: url("../uploads/map_geographi_full.png") no-repeat 37px 20px;*/
+    background-image: url("../uploads/map_geographi_full.png");
+    background-position: 37px 20px;
+    background-repeat: no-repeat;
     display: none;
 }
 #map-part-left{
