@@ -16,7 +16,10 @@ $(document).ready(function(){
         mapTextGrad = $( '.textGrad', map ),
         mapH2 = $( 'h2', map );
 
-    if(block){
+    mapControl.find('a').not('.active').children('span').hide();
+    
+    if(block){ 
+           
         map.fadeIn( fadeSpeedSlow,function(){
             mapControl.fadeIn( fadeSpeedFast, function(){
                 mapUl.fadeIn( fadeSpeedSlow, function(){
@@ -36,11 +39,15 @@ $(document).ready(function(){
         event.preventDefault();
         if( block ) return;
 
+        $(this).siblings('.active').find('> span').fadeOut(400);
+        $(this).find('> span').fadeIn(400);
+       
         showMapSlide(this);
         $( this ).addClass( 'active' ).siblings( 'a' ).removeClass( 'active' );
 
     });
 
+    
     function showMapSlide( targetObj ){
         block = 1;
         var mapLeftPosition = parseInt( mapPartLeft.css( 'left' ) );

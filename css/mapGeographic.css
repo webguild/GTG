@@ -88,9 +88,18 @@
 #map-control .active{
 	color: #000;
 	text-decoration: none;
+}
+#map-control a > span{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;	
+	display: inline-block;
 	background: url(../uploads/sprite.png) no-repeat 0px -56px;
 }
-#map-control .active span{
+#map-control a > span > span{
 	display: block;
 	width: 8px;
 	height: 30px;
@@ -99,7 +108,7 @@
 	position: absolute;
 	background: url(../uploads/sprite.png) no-repeat -441px -56px;
 }
-#map-control .active span + span{	
+#map-control a > span span + span{	
 	top: -20px;
 	left: 50%; 
 	width: 24px;
@@ -188,7 +197,7 @@
 	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
 }
 #mapGeographic #petersburg{
-	top: 121px;
+	top: 119px;
 	left: 249px;
 }
 #mapGeographic #smolensk{
