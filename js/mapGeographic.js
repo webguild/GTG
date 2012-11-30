@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var fadeSpeedFast = 200, fadeSpeedSlow =700, animateSpeed = 500, block = 1;
+    var fadeSpeedFast = 200, fadeSpeedSlow =700, animateSpeed = 1000, block = 1;
     if($.browser.msie && $.browser.version !== 9){
         fadeSpeedFast = 0;
         fadeSpeedSlow =0;
@@ -21,8 +21,7 @@ $(document).ready(function(){
             mapControl.fadeIn( fadeSpeedFast, function(){
                 mapUl.fadeIn( fadeSpeedSlow, function(){
                     mapGasPipe.fadeIn( fadeSpeedSlow, function(){
-                        mapGasCount.fadeIn( fadeSpeedSlow );
-                        block = 0
+                        mapGasCount.fadeIn( fadeSpeedSlow, function(){block = 0;} );
                     });
                 });
             });
@@ -33,14 +32,13 @@ $(document).ready(function(){
         color: '-linear-gradient( #c2c2c2, #383838, #000000 )'
     });
 
-    $( '#map-control' ).on( 'click', 'a', function (){
-        if( block ){
-            return;
-        }else{
-            showMapSlide(this);
-            $( this ).addClass( 'active' ).siblings( 'a' ).removeClass( 'active' );
-        }
-        return false;
+    $( '#map-control' ).on( 'click', 'a', function(event){
+        event.preventDefault();
+        if( block ) return;
+
+        showMapSlide(this);
+        $( this ).addClass( 'active' ).siblings( 'a' ).removeClass( 'active' );
+
     });
 
     function showMapSlide( targetObj ){
@@ -51,7 +49,10 @@ $(document).ready(function(){
         var mapStepRight = 47;
 
         if($( targetObj ).hasClass( 'mapCollapse' ) && !$( targetObj).hasClass( 'active' )){
-           mapUl.add( mapGasCount ).add( mapH2 ).add( mapGasPipe ).fadeOut(fadeSpeedSlow, function(){
+           mapUl.fadeOut(fadeSpeedSlow);
+           mapGasCount.fadeOut(fadeSpeedSlow);
+           mapH2.fadeOut(fadeSpeedSlow);
+           mapGasPipe.fadeOut(fadeSpeedSlow, function(){
                 mapPartLeft.add( mapPartRight ).css( 'visibility', 'visible' );
                 map.css('backgroundImage', 'none');
                 mapPartLeft.animate( {left: mapLeftPosition - mapStepLeft}, animateSpeed);
@@ -61,12 +62,13 @@ $(document).ready(function(){
                         color: '-linear-gradient( #c2c2c2, #383838, #000000 )'
                     });
                     mapH2.html('Люди Ямала – мощная сила!').fadeIn( fadeSpeedSlow );
-                    mapGasField.add( mapGasCount ).fadeIn( fadeSpeedSlow );
-                    block = 0;
+                    mapGasField.fadeIn(fadeSpeedSlow);
+                    mapGasCount.fadeIn( fadeSpeedSlow, function(){console.log(this);block = 0;} );
                 });
             });
         }else if($( targetObj ).hasClass( 'mapRecovery' ) && !$( targetObj).hasClass( 'active' )){
-            mapGasField.add( mapGasCount ).fadeOut( fadeSpeedSlow );
+            mapGasField.fadeOut( fadeSpeedSlow );
+            mapGasCount.fadeOut( fadeSpeedSlow );
             mapH2.fadeOut( fadeSpeedSlow, function(){
                 $( this ).html('Наш газ — для людей!');
                 mapPartLeft.animate( {left: mapLeftPosition + mapStepLeft}, animateSpeed );
@@ -79,8 +81,8 @@ $(document).ready(function(){
                     });
                     mapUl.fadeIn( fadeSpeedSlow, function(){
                         mapGasPipe.fadeIn( fadeSpeedSlow, function(){
-                            mapGasCount.add(mapH2).fadeIn( fadeSpeedSlow );
-                            block = 0;
+                            mapGasCount.fadeIn(fadeSpeedSlow);
+                            mapH2.fadeIn( fadeSpeedSlow, function(){console.log(this);block = 0;} );
                         });
                     });
                 });
