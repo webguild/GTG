@@ -64,11 +64,10 @@ $(document).ready(function(){
                 map.css('backgroundImage', 'none');
                 mapPartLeft.animate( {left: mapLeftPosition - mapStepLeft}, animateSpeed);
                 mapPartRight.animate( {left: mapRightPosition + mapStepRight}, animateSpeed, function(){
-                    mapTextGrad.html( '104 720 000 000' ).siblings( 'p' ).html( 'запасов кубометров газа' );
-                    Cufon.replace( mapTextGrad, {
-                        color: '-linear-gradient( #c2c2c2, #383838, #000000 )'
-                    });
-                    mapH2.html('Люди Ямала – мощная сила!').fadeIn( fadeSpeedSlow );
+                    $('strong.active', mapGasCount).removeClass('active').siblings('strong').addClass('active');
+                    $('p.active', mapGasCount).removeClass('active').siblings('p').addClass('active');
+                    $('h2.active', map).removeClass('active').siblings('h2').addClass('active').fadeIn(fadeSpeedSlow);
+//                    mapH2.fadeIn( fadeSpeedSlow );
                     mapGasField.fadeIn(fadeSpeedSlow);
                     mapGasCount.fadeIn( fadeSpeedSlow, function(){block = 0;} );
                 });
@@ -76,20 +75,17 @@ $(document).ready(function(){
         }else if($( targetObj ).hasClass( 'mapRecovery' ) && !$( targetObj).hasClass( 'active' )){
             mapGasField.fadeOut( fadeSpeedSlow );
             mapGasCount.fadeOut( fadeSpeedSlow );
-            mapH2.fadeOut( fadeSpeedSlow, function(){
-                $( this ).html('Наш газ — для людей!');
+            $('h2.active', map).removeClass('active').siblings('h2').addClass('active').fadeOut( fadeSpeedSlow, function(){
                 mapPartLeft.animate( {left: mapLeftPosition + mapStepLeft}, animateSpeed );
                 mapPartRight.animate( {left: mapRightPosition - mapStepRight}, animateSpeed, function(){
                     map.css('backgroundImage', '');
                     mapPartLeft.add( mapPartRight ).css( 'visibility', 'hidden' );
-                    mapTextGrad.html( '185 000 000').siblings( 'p').html( 'кубометров газа доставлено адресатам' );
-                    Cufon.replace( mapTextGrad, {
-                        color: '-linear-gradient( #c2c2c2, #383838, #000000 )'
-                    });
+                    $('strong.active', mapGasCount).removeClass('active').siblings('strong').addClass('active');
+                    $('p.active', mapGasCount).removeClass('active').siblings('p').addClass('active');
                     mapUl.fadeIn( fadeSpeedSlow, function(){
                         mapGasPipe.fadeIn( fadeSpeedSlow, function(){
                             mapGasCount.fadeIn(fadeSpeedSlow);
-                            mapH2.fadeIn( fadeSpeedSlow, function(){block = 0;} );
+                            $('h2.active', map).fadeIn( fadeSpeedSlow, function(){block = 0;} );
                         });
                     });
                 });

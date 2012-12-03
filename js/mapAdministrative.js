@@ -2,11 +2,16 @@
 $(function(){
 
 	$('map').on('mouseenter', 'area', function(event){
-		if($(this).hasClass('active'))return;
+		if($(this).hasClass('active')){
+            $(this).on('mouseleave', function(event){
+                li.css('display', 'none');
+            });
+            return;
+        }
 		var li = $('#' + this.id + '1');
 		var left = li.attr('data-left');
 		var top = li.attr('data-top');
-		
+
 		$('img.active', li).hide();
 
 		li.css({
@@ -24,7 +29,7 @@ $(function(){
 			li.show();
 			$('.active', li).show();
 			$(this).addClass('active').siblings().removeClass('active');
-			$(this).off();
+            $(this).off();
 		});		
 	});
 
