@@ -2,7 +2,7 @@
 $(function(){
 
 	$('map').on('mouseenter', 'area', function(event){
-        var li = $('#' + this.id + '1');
+        var li = $('#' + this.id + 'Info');
 		if($(this).hasClass('active')){
             $('div', li).css('display', 'block');
             $(this).on('mouseleave', function(event){
