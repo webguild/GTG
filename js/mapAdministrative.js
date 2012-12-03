@@ -23,6 +23,7 @@ $(function(){
 		});
         $('div', li).css('display', 'block');
 
+
 		$(this).on('mouseleave', function(event){
 			li.css('display', 'none');
 		});
@@ -36,7 +37,13 @@ $(function(){
             $(this).on('mouseleave', function(event){
                 $('div', li).css('display', 'none');
             });
+
 		});		
 	});
+
+	
+
+
+
 });
 }());

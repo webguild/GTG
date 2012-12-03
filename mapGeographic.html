@@ -15,51 +15,49 @@
 <body>
 	<!-- start geographic map -->
 	<div id="mapGeographic">
+		<div id="map-container">
+			<h2>Наш газ — для людей!</h2>
 
-		<h2 class="active">Наш газ — для людей!</h2>
-        <h2>Люди Ямала – мощная сила!</h2>
+			<!-- start map parts -->
+			<div id="map-part-left"></div>
+			<div id="map-part-right">
+	            <div id="gas-field"></div>
+			</div>
+			<!-- end map parts -->
 
-		<!-- start map parts -->
-		<div id="map-part-left"></div>
-		<div id="map-part-right">
-            <div id="gas-field"></div>
+			<!-- start map-control -->
+			<div id="map-control">
+				<a href="#" class="mapCollapse">Добыча газа и газового конденсата<span><span></span><span></span></span></a>
+				<a href="#" class="mapRecovery active">Управление разработкой и добычей<span><span></span><span></span></span></a>
+				<span></span>
+			</div>
+			<!-- end map-control -->
+
+			<!-- start city list -->
+			<ul>
+				<li id="petersburg">Санкт-Петербург<span></span></li>
+				<li id="smolensk">Смоленск<span></span></li>
+				<li id="moscow">Москва<span></span></li>
+				<li id="kazan">Казань<span></span></li>
+				<li id="yekaterinburg">Екатеринбург<span></span></li>
+				<li id="krasnodar">Краснодар<span></span></li>
+				<li id="urengoy">Уренгой<span></span></li>			
+				<li id="krasnoyarsk">Красноярск<span></span></li>
+				<li id="khabarovsk">Хабаровск<span></span></li>
+			</ul>
+			<!-- end city list -->
+
+			<div id="gas-pipe"></div>
+
+			<!-- start gas count -->
+			<div id="gas-count">
+	            <div class="cloudsDown"></div>
+	            <strong class="textGrad">185 000 000</strong>
+	            <p>кубометров газа доставлено адресатам</p>
+	            <div class="cloudsUp"></div>
+	        </div>
+			<!-- end gas count	 -->
 		</div>
-		<!-- end map parts -->
-
-		<!-- start map-control -->
-		<div id="map-control">
-			<a href="#" class="mapCollapse">Добыча газа и газового конденсата<span><span></span><span></span></span></a>
-			<a href="#" class="mapRecovery active">Управление разработкой и добычей<span><span></span><span></span></span></a>
-			<span></span>
-		</div>
-		<!-- end map-control -->
-
-		<!-- start city list -->
-		<ul>
-			<li id="petersburg">Санкт-Петербург<span></span></li>
-			<li id="smolensk">Смоленск<span></span></li>
-			<li id="moscow">Москва<span></span></li>
-			<li id="kazan">Казань<span></span></li>
-			<li id="yekaterinburg">Екатеринбург<span></span></li>
-			<li id="krasnodar">Краснодар<span></span></li>
-			<li id="urengoy">Уренгой<span></span></li>			
-			<li id="krasnoyarsk">Красноярск<span></span></li>
-			<li id="khabarovsk">Хабаровск<span></span></li>
-		</ul>
-		<!-- end city list -->
-
-		<div id="gas-pipe"></div>
-
-		<!-- start gas count -->
-		<div id="gas-count">
-            <div class="cloudsDown"></div>
-            <strong class="textGrad active">185 000 000</strong>
-            <strong class="textGrad">104 720 000 000</strong>
-            <p class="active">кубометров газа доставлено адресатам</p>
-            <p>запасов кубометров газа</p>
-            <div class="cloudsUp"></div>
-        </div>
-		<!-- end gas count	 -->
 
 		<div id="map-preloader"></div>
 
