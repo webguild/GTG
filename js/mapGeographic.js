@@ -1,10 +1,15 @@
-$(document).ready(function(){
+$(window).on('load', function (event){
+    // fade time
     var fadeSpeedFast = 200, fadeSpeedSlow =700, animateSpeed = 1000, block = 1;
+
+    // for IE 7-8
     if($.browser.msie && $.browser.version !== 9){
         fadeSpeedFast = 0;
         fadeSpeedSlow =0;
         animateSpeed = 0;
     }
+
+    // map elements
     var map = $( '#mapGeographic' ),
         mapControl = $( '#map-control', map ),
         mapUl = $( 'ul', map ),
@@ -17,9 +22,10 @@ $(document).ready(function(){
         mapH2 = $( 'h2', map );
 
     mapControl.find('a').not('.active').children('span').hide();
+    map.find('#map-preloader').hide();
     
-    if(block){ 
-           
+    // map animation on page load
+    if(block){            
         map.fadeIn( fadeSpeedSlow,function(){
             mapControl.fadeIn( fadeSpeedFast, function(){
                 mapUl.fadeIn( fadeSpeedSlow, function(){
@@ -31,10 +37,12 @@ $(document).ready(function(){
         });
     }
 
+    // cufon 
     Cufon.replace( mapTextGrad, {
         color: '-linear-gradient( #c2c2c2, #383838, #000000 )'
     });
 
+    // map control buttons
     $( '#map-control' ).on( 'click', 'a', function(event){
         event.preventDefault();
         if( block ) return;
@@ -47,7 +55,7 @@ $(document).ready(function(){
 
     });
 
-    
+    // map collapse and recovery
     function showMapSlide( targetObj ){
         block = 1;
         var mapLeftPosition = parseInt( mapPartLeft.css( 'left' ) );
@@ -92,5 +100,4 @@ $(document).ready(function(){
             });
         }else{block = 0;}
     }
-
 });
