@@ -22,6 +22,8 @@
 	text-align: center;
 	background: #fff;
 	box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);
+    left: -35px;
+    top: 50px;
 }
 #mapAdministrative li h2{
 	font-size: 16px;
