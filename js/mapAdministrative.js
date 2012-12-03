@@ -3,16 +3,18 @@ $(function(){
 
 	$('map').on('mouseenter', 'area', function(event){
         var li = $('#' + this.id + 'Info');
+        	
 		if($(this).hasClass('active')){
             $('div', li).css('display', 'block');
             $(this).on('mouseleave', function(event){
                 $('div', li).css('display', 'none');
             });
             return;
-        }
-
+        } 
+        
 		var left = li.attr('data-left');
 		var top = li.attr('data-top');
+
 
 		$('img.active', li).hide();
 
@@ -20,9 +22,18 @@ $(function(){
 			'display':'block',
 			'top': top + 'px',
 			'left': left  + 'px'
-		});
-        $('div', li).css('display', 'block');
+		});        
 
+        // pop-up position
+        var img = li.find('img:first')[0],
+        	popUpLeft = parseInt(window.getComputedStyle(img).width) / 2 - $('div', li).outerWidth() / 2,
+        	popUpTop = window.getComputedStyle(img).height;
+
+		$('div', li).css({
+			'display': 'block', 
+			'top': popUpTop,
+			'left': popUpLeft
+		});
 
 		$(this).on('mouseleave', function(event){
 			li.css('display', 'none');
