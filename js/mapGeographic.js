@@ -75,7 +75,6 @@ $(window).on('load', function (event){
                     $('strong.active', mapGasCount).removeClass('active').siblings('strong').addClass('active');
                     $('p.active', mapGasCount).removeClass('active').siblings('p').addClass('active');
                     $('h2.active', map).removeClass('active').siblings('h2').addClass('active').fadeIn(fadeSpeedSlow);
-//                    mapH2.fadeIn( fadeSpeedSlow );
                     mapGasField.fadeIn(fadeSpeedSlow);
                     mapGasCount.fadeIn( fadeSpeedSlow, function(){block = 0;} );
                 });
