@@ -70,7 +70,7 @@ $(document).ready(function(){
                     });
                     mapH2.html('Люди Ямала – мощная сила!').fadeIn( fadeSpeedSlow );
                     mapGasField.fadeIn(fadeSpeedSlow);
-                    mapGasCount.fadeIn( fadeSpeedSlow, function(){console.log(this);block = 0;} );
+                    mapGasCount.fadeIn( fadeSpeedSlow, function(){block = 0;} );
                 });
             });
         }else if($( targetObj ).hasClass( 'mapRecovery' ) && !$( targetObj).hasClass( 'active' )){
@@ -89,7 +89,7 @@ $(document).ready(function(){
                     mapUl.fadeIn( fadeSpeedSlow, function(){
                         mapGasPipe.fadeIn( fadeSpeedSlow, function(){
                             mapGasCount.fadeIn(fadeSpeedSlow);
-                            mapH2.fadeIn( fadeSpeedSlow, function(){console.log(this);block = 0;} );
+                            mapH2.fadeIn( fadeSpeedSlow, function(){block = 0;} );
                         });
                     });
                 });

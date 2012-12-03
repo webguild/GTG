@@ -7,11 +7,58 @@
 	
 	<script type="text/javascript" src="js/libs/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/mapAdministrative.js"></script>
+	<style type="text/css">
+		ul{
+			position: absolute;
+		}
+		ul li {
+			position: absolute;
+			display: none;
+		}
+		ul img{
+			position: absolute;
+			z-index: 1;
+		}
+	</style>
 	
 </head>
 <body>
 	<div id="mapAdministrative">
-        <img src="uploads/map_administr_img.png" alt="map" />
-	</div>
+        <img src="uploads/map_administr_transparent.png" usemap="#russia" alt="map"  />
+        <map name="russia" id="russia">
+           <area id="reg1" shape="poly" href="#" alt="area" coords="285,218,293,211,297,200,310,188,321,183,331,186,341,183,356,179,362,179,363,173,363,166,355,167,345,170,336,167,316,153,304,141,300,137,283,135,277,137,275,144,275,150,272,154,264,150,258,150,251,139,249,139,249,149,245,153,241,159,239,163,250,166,243,172,237,179,232,181,224,185,219,193,219,200,232,200,240,200,247,197,258,208,272,210,281,216">
+           <area  id="reg2" shape="poly" href="#" alt="area" coords="591,147,579,145,584,174,577,198,564,209,565,232,563,257,568,276,576,287,584,311,586,337,605,341,623,324,635,328,643,335,654,349,664,364,680,366,713,364,740,363,746,346,741,320,753,303,768,272,765,255,792,236,787,223,792,206,807,192,810,176,810,158,823,146,814,140,806,132,815,115,804,103,786,103,778,99,768,105,751,118,711,120,699,133,687,157,662,162,636,140,612,149">
+           <area id="reg3" shape="poly" href="#" alt="area" coords="54,285,47,275,38,266,27,269,31,292,42,312,56,306,58,293">
+        </map>  
+
+        <ul>
+		<li id="reg11" data-top="120" data-left="218">
+			<img src="uploads/hover-region.png" alt="img" />
+			<img src="uploads/active-region.png" alt="img" class="active" />
+			<div>
+				<h2>Какая-то область</h2>
+				<p>а тут чето еще</p>
+			</div>
+		</li>
+		<li id="reg21" data-top="145" data-left="600">
+			<img src="uploads/hover-region.png" alt="img" />
+			<img src="uploads/active-region.png" alt="img" class="active" />
+			<div>
+				<h2>Какая-то область</h2>
+				<p>а тут чето еще</p>
+			</div>
+		</li>
+		<li id="reg31" data-top="245" data-left="50">
+			<img src="uploads/hover-region.png" alt="img" />
+			<img src="uploads/active-region.png" alt="img" class="active" />
+			<div>
+				<h2>Какая-то область</h2>
+				<p>а тут чето еще</p>
+			</div>
+		</li>
+	</ul>  
+	</div>	
+	
+
 </body>
 </html>
