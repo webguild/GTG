@@ -21,12 +21,16 @@
     height: 600px;
 	margin: 0 auto;
     position: relative;
-    /*background: url("../uploads/map_geographi_full.png") no-repeat 37px 20px;*/
-    background-image: url("../uploads/map_geographi_full.png");
-    background-position: 37px 20px;
-    background-repeat: no-repeat;
-    display: none;
 }
+#mapGeographic #map-container{
+	display: none;
+	width: 100%;
+	height: 100%;
+	/*background-image: url("../uploads/map_geographi_full.png");*/
+	background-image: url(http://gtg.dev.web-guild.net/uploads/map_geographi_full.png);
+	background-repeat: no-repeat;
+	background-position: 37px 20px;	
+} 
 #map-part-left{
     width: 695px;
     height: 565px;
@@ -132,10 +136,6 @@
     padding-left: 10px;
     margin: 0 0 0 134px;
     background: url("../uploads/h2_blue_line.png") no-repeat 0 2px;
-    display: none;
-}
-#mapGeographic h2.active{
-     display: block;
 }
 
 /* gas count */
@@ -154,20 +154,12 @@
 #gas-count strong{
     position: relative;
     z-index: 1;
-    display: none;
-}
-#gas-count strong.active{
-    display: block;
 }
 #gas-count p{
     font-size: 18px;
     position: relative;
     top: -33px;
     left: 116px;
-    display: none;
-}
-#gas-count p.active{
-    display: block;
 }
 #gas-count .cloudsDown{
     position: absolute;
