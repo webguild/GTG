@@ -134,6 +134,7 @@
     background: url("../uploads/h2_blue_line.png") no-repeat 0 2px;
 }
 
+/* gas count */
 #gas-count {
     position: absolute;
     text-align: center;
@@ -300,6 +301,17 @@
     top: 137px;
     background: url("../uploads/minerals_img.png") no-repeat;
     display: none;
+}
+
+/* map preloader */
+#map-preloader{
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 50%;
+	left: 50%;
+	margin: -30px 0 0 -30px;
+	background: url("../uploads/preloader.gif") no-repeat;
 }
 
 /* End mapGeographic
