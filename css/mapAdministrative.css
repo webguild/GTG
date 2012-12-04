@@ -18,6 +18,7 @@
 }
 #mapAdministrative ul li {
     position: absolute;
+    list-style-type: none;
     display: none;
 }
 #mapAdministrative ul img{
