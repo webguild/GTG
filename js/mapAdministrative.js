@@ -27,7 +27,8 @@ $(function(){
         // pop-up position
         var img = li.find('img:first')[0],
         	popUpLeft = parseInt(window.getComputedStyle(img).width) / 2 - $('div', li).outerWidth() / 2,
-        	popUpTop = window.getComputedStyle(img).height;
+        	popUpTop = parseInt(window.getComputedStyle(img).height);
+            popUpTop = popUpTop - (popUpTop/5);
 
 		$('div', li).css({
 			'display': 'block', 

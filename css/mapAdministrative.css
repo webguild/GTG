@@ -27,7 +27,7 @@
 #mapAdministrative li div{
 	position: absolute;
 	z-index: 1;
-	width: 158px;
+	width: 165px;
 	padding: 13px 16px 9px 16px; 
 	text-align: center;
 	background: #fff;
@@ -45,7 +45,6 @@
 	margin: 0;
 	color: #848484;
 	font-size: 13px;
-	font-weight: bold;
 }
 #mapAdministrative li div span{
 	position: absolute;
