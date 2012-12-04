@@ -40,7 +40,8 @@ $(function (){
             area = $('<area>', {
                 shape: 'poly',
                 href: '#',
-                alt: 'area'            
+                alt: 'area',
+                id: 'regionName'
             });
 
         points.each(function (v){

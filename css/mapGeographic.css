@@ -136,6 +136,10 @@
     padding-left: 10px;
     margin: 0 0 0 134px;
     background: url("../uploads/h2_blue_line.png") no-repeat 0 2px;
+    display: none;
+}
+#mapGeographic h2.active{
+   display: block;
 }
 
 /* gas count */
@@ -154,12 +158,20 @@
 #gas-count strong{
     position: relative;
     z-index: 1;
+    display: none;
+}
+#gas-count strong.active{
+    display: block;
 }
 #gas-count p{
     font-size: 18px;
     position: relative;
     top: -33px;
     left: 116px;
+    display: none;
+}
+#gas-count p.active{
+    display: block;
 }
 #gas-count .cloudsDown{
     position: absolute;

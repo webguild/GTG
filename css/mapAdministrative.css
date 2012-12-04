@@ -13,6 +13,17 @@
     left: 0;
     z-index: 2;
 }
+#mapAdministrative ul{
+    position: absolute;
+}
+#mapAdministrative ul li {
+    position: absolute;
+    display: none;
+}
+#mapAdministrative ul img{
+    position: absolute;
+    z-index: 1;
+}
 #mapAdministrative li div{
 	position: absolute;
 	z-index: 1;
