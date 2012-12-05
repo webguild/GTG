@@ -51,13 +51,8 @@ $(function(){
             $(this).on('mouseleave', function(event){
                 $('div', li).css('display', 'none');
             });
-
 		});		
 	});
-
-	
-
-
 
 });
 }());

@@ -9,6 +9,7 @@ $(window).on('load', function (event){
         animateSpeed = 0;
     }
 
+
     // map elements
     var map = $( '#mapGeographic' ),
         mapContainer = $( '#map-container', map ),
@@ -26,16 +27,40 @@ $(window).on('load', function (event){
     map.find('#map-preloader').hide();
     
     // map animation on page load
-    if(block){            
-        mapContainer.fadeIn( fadeSpeedSlow,function(){
-            mapControl.fadeIn( fadeSpeedFast, function(){
-                mapUl.fadeIn( fadeSpeedSlow, function(){
-                    mapGasPipe.fadeIn( fadeSpeedSlow, function(){
-                        mapGasCount.fadeIn( fadeSpeedSlow, function(){block = 0;} );
+    if(block){
+        var mapLeftPosition = parseInt( mapPartLeft.css( 'left' ) );
+        var mapRightPosition = parseInt( mapPartRight.css( 'left' ) );
+        var mapStepLeft = 24;
+        var mapStepRight = 47;
+        if($('.mapRecovery', mapControl).hasClass('active')){
+            mapContainer.fadeIn( fadeSpeedSlow,function(){
+                mapControl.fadeIn( fadeSpeedFast, function(){
+                    mapUl.fadeIn( fadeSpeedSlow, function(){
+                        mapGasPipe.fadeIn( fadeSpeedSlow, function(){
+                            mapGasCount.fadeIn( fadeSpeedSlow, function(){block = 0;} );
+                        });
                     });
                 });
             });
-        });
+        }else{
+            mapH2.css('display', 'none');
+            mapContainer.css('display', 'block');
+            mapPartLeft.add( mapPartRight ).css( 'visibility', 'visible' );
+            mapContainer.css('backgroundImage', 'none');
+            mapPartLeft.animate( {left: mapLeftPosition - mapStepLeft}, animateSpeed);
+            mapPartRight.animate( {left: mapRightPosition + mapStepRight}, animateSpeed, function(){
+                $('strong.active', mapGasCount).removeClass('active').siblings('strong').addClass('active');
+                $('p.active', mapGasCount).removeClass('active').siblings('p').addClass('active');
+
+                $('h2.active', map).removeClass('active').siblings('h2').addClass('active').fadeIn( fadeSpeedSlow );
+                mapGasField.fadeIn(fadeSpeedSlow);
+                mapGasCount.fadeIn( fadeSpeedSlow, function(){
+                    mapControl.fadeIn(fadeSpeedSlow);
+                    block = 0;
+                });
+            });
+        }
+
     }
 
     // cufon 
@@ -44,7 +69,7 @@ $(window).on('load', function (event){
     });
 
     // map control buttons
-    $( '#map-control' ).on( 'click', 'a', function(event){
+    mapControl.on( 'click', 'a', function(event){
         event.preventDefault();
         if( block ) return;
 
