@@ -41,9 +41,11 @@ $(function(){
 		});
 
 		$(this).on('click', function(event){
-			$('ul li').hide();
+			$('#mapAdministrative ul li').hide();
 			li.show();
 			$('.active', li).show();
+            $('.mapContent li').hide();
+            $('.mapContent .' + li.attr('id')).show();
 			$(this).addClass('active').siblings().removeClass('active');
             $(this).off();
             $(this).on('mouseleave', function(event){
