@@ -44,14 +44,13 @@ $(window).on('load', function (event){
             });
         }else{
             mapH2.css('display', 'none');
-            mapContainer.css('display', 'block');
-            mapPartLeft.add( mapPartRight ).css( 'visibility', 'visible' );
+            mapContainer.css('visibility', 'visible');
             mapContainer.css('backgroundImage', 'none');
+            mapPartLeft.add( mapPartRight ).css( 'visibility', 'visible' );
             mapPartLeft.animate( {left: mapLeftPosition - mapStepLeft}, animateSpeed);
             mapPartRight.animate( {left: mapRightPosition + mapStepRight}, animateSpeed, function(){
                 $('strong.active', mapGasCount).removeClass('active').siblings('strong').addClass('active');
                 $('p.active', mapGasCount).removeClass('active').siblings('p').addClass('active');
-
                 $('h2.active', map).removeClass('active').siblings('h2').addClass('active').fadeIn( fadeSpeedSlow );
                 mapGasField.fadeIn(fadeSpeedSlow);
                 mapGasCount.fadeIn( fadeSpeedSlow, function(){

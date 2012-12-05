@@ -23,7 +23,7 @@
     position: relative;
 }
 #mapGeographic #map-container{
-	display: none;
+	visibility: hidden;
 	width: 100%;
 	height: 100%;
 	/*background-image: url(http://gtg.dev.web-guild.net/uploads/map_geographi_full.png);*/

@@ -25,9 +25,9 @@ $(function(){
 		});        
 
         // pop-up position
-        var img = li.find('img:first')[0],
-        	popUpLeft = parseInt(window.getComputedStyle(img).width) / 2 - $('div', li).outerWidth() / 2,
-        	popUpTop = parseInt(window.getComputedStyle(img).height);
+        var img = li.find('img:first'),
+            popUpLeft = parseInt(img.width())/2 - $('div', li).outerWidth() / 2,
+            popUpTop = img.height();
             popUpTop = popUpTop - (popUpTop/5);
 
 		$('div', li).css({
