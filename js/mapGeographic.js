@@ -3,7 +3,7 @@ $(window).on('load', function (event){
     var fadeSpeedFast = 200, fadeSpeedSlow =700, animateSpeed = 1000, block = 1;
 
     // for IE 7-8
-    if($.browser.msie && $.browser.version !== 9){
+    if($.browser.msie && $.browser.version !== '9.0'){
         fadeSpeedFast = 0;
         fadeSpeedSlow =0;
         animateSpeed = 0;
